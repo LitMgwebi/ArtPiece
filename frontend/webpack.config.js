@@ -1,17 +1,18 @@
 const path = require('path')
+const webpack = require("webpack");
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.js'),
+  entry: "./src/index.jsx",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "./static/client"),
+    filename: "[name].js",
   },
   module: {
     rules: [
       {
         test: /\.(jsx|js)$/,
-        include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
+        extensions: ['.jsx', '.js'],
         use: [{
           loader: 'babel-loader',
           options: {
@@ -25,5 +26,16 @@ module.exports = {
         }]
       }
     ]
-  }
+  },
+  optimization: {
+    minimize: true,
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {
+        // This has effect on the react lib size
+        NODE_ENV: JSON.stringify("production"),
+      },
+    }),
+  ],
 }

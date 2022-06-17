@@ -2,10 +2,10 @@
   "name": "frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"  },
   "keywords": [],
   "author": "",
   "license": "ISC",
