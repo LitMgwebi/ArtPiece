@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from rest_framework.response import Response
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -12,10 +12,9 @@ def index(request, format=None):
      try:
           art_pieces = ArtPiece.objects.all()
           art_piece_serializer = ArtPieceSerializer(art_pieces, many=True)
-          return JsonResponse(art_piece_serializer.data)
+          return JsonResponse(art_piece_serializer.data, safe=False)
      except Exception as err:
           print(err)
-
 
 
 @api_view(['POST'])

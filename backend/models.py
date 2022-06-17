@@ -10,5 +10,5 @@ class ArtPiece(models.Model):
      blog = models.TextField()
      date = models.DateTimeField(default=timezone.now)
      artist = models.CharField(max_length=255)
-     art_Piece = models.ImageField(upload_to=upload_path)
+     art = models.FileField(upload_to=upload_path)
      

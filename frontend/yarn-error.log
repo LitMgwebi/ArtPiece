@@ -1,0 +1,47 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add -D @babel/core @babel/present-env @babel/present-react babel-loader react react-dom webpack webpack-cli
+
+PATH: 
+  C:\Program Files\Python310\Scripts\;C:\Program Files\Python310\;C:\Windows\System32\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\nodejs\;C:\Users\lithi\AppData\Local\Programs\Python\Python310;C:\Program Files\MongoDB\Server\4.4\bin;c:\users\lithi\appdata\local\programs\python\python310\lib\site-packages;C:\Program Files\curl-7.82.0-win64-mingw\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\lithi\AppData\Local\Microsoft\WindowsApps;C:\Users\lithi\.dotnet\tools;C:\Users\lithi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lithi\AppData\Local\Yarn\bin;C:\Windows\System32\;C:\Users\lithi\AppData\Local\GitHubDesktop\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\lithi\AppData\Roaming\npm;
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  17.4.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@babel%2fpresent-env: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66097:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140749:22)
+      at Request.emit (node:events:520:28)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141721:10)
+      at Request.emit (node:events:520:28)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141643:12)
+      at Object.onceWrapper (node:events:639:28)
+      at IncomingMessage.emit (node:events:532:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "frontend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
