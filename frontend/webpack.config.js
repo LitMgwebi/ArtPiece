@@ -4,7 +4,7 @@ const webpack = require("webpack");
 module.exports = {
   entry: "./src/index.jsx",
   output: {
-    path: path.resolve(__dirname, "./static/client"),
+    path: path.resolve(__dirname, "./static/frontend"),
     filename: "[name].js",
   },
   module: {
@@ -12,7 +12,6 @@ module.exports = {
       {
         test: /\.(jsx|js)$/,
         exclude: /node_modules/,
-        extensions: ['.jsx', '.js'],
         use: [{
           loader: 'babel-loader',
           options: {
@@ -26,6 +25,9 @@ module.exports = {
         }]
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
   optimization: {
     minimize: true,
