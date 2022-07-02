@@ -1,9 +1,11 @@
 import * as React from "react";
 import axios from "axios";
-import FormControl from "@material-ui/core/FormControl";
-import TextField from "@material-ui/core/TextField";
-import Input from "@material-ui/core/Input";
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+
 
 const List = () => {
      // const [artPieces, setNewArt] = useState(null)
@@ -31,26 +33,24 @@ const List = () => {
      return(
           <div className="list">
           <h1>List</h1>
-               <FormControl>
-                    <div id="blogInput">
-                         <TextField
-                              id="outlined-textarea"
-                              label="Blog"
-                              placeholder="Enter Blog here"
-                              multiline
-                         />
-                    </div>
-                    <div id="artistInput">
-                         <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                         <TextField id="inputArtist" label="Artist" variant="standard" />
-                    </div>
-                    <div id="dateInput">
-                         <Input id="Date" readOnly='true' defaultValue={date}/>     
-                    </div>
-                    <div id="artUpload">
-                         <Input accept="image/*" id="contained-button-file" multiple type="file" /> 
-                    </div>
-               </FormControl>
+               <Card sx={{maxWidth: 345}}>
+                    <CardMedia
+                         component="img"
+                         height="140"
+                         // image="/static/images/cards/contemplative-reptile.jpg"
+                         // alt="green iguana"
+                    />
+
+                    <CardContent>
+                         <h2>Title</h2>
+                         <h3>Artist</h3>
+                         <p>Blog</p>
+                    </CardContent>
+
+                    <CardActions>
+                         <Button>View</Button>
+                    </CardActions>
+               </Card>
           </div>
      );
 }
