@@ -1,7 +1,11 @@
-import React from "react";
+import * as React from "react";
 import {render} from "react-dom";
 import Home from "./Home";
-import Index from "./crud/Index"
+import Delete from "./crud/Delete";
+import List from "./crud/List";
+import Create from "./crud/Create";
+import Update from "./crud/Update";
+import Detail from "./crud/Detail";
 import {
      BrowserRouter as Router,
      Routes,
@@ -15,11 +19,19 @@ const App = () => {
                <div>
                     <navbar>
                          <Link to="/">Home</Link>
-                         <Link to="index">Index</Link>
+                         <Link to="/list">List</Link>
+                         <Link to="/create">Create</Link>
+                         <Link to="/update">Update</Link>
+                         <Link to="/detail">Detail</Link>
+                         <Link to='/delete'>Delete</Link>
                     </navbar>
                     <Routes>
-                         <Route path="/" element={<Home />} />
-                         <Route path="/index" element={<Index />}/>
+                         <Route exact path="/" element={<Home />} />
+                         <Route path="/list" element={<List />}/>
+                         <Route path="/create" element={<Create />}/>
+                         <Route path="/update" element={<Update />}/>
+                         <Route path="/detail" element={<Detail />}/>
+                         <Route path="/delete" element={<Delete />}/>
                     </Routes>
                </div>
           </Router>
