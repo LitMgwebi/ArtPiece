@@ -6,7 +6,9 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 const Detail = () => {
      return(
           <div className="detail">
-               <h1>Detail</h1>
+              <h1>Delete</h1>
+               <Divider/>
+               <h2>Title</h2>
                <Divider/>
                <h3>Artist</h3>
                <Divider/>

@@ -24,6 +24,9 @@ const Update = () => {
                               multiline
                          />
                     </div>
+                    <div id="titleInput">
+                         <TextField id="inputTitle" label="Title" variant="standard" />
+                    </div>
                     <div id="artistInput">
                          <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                          <TextField id="inputArtist" label="Artist" variant="standard" />

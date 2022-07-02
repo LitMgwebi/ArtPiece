@@ -8,6 +8,8 @@ const Delete = () => {
           <div className="delete">
                <h1>Delete</h1>
                <Divider/>
+               <h2>Title</h2>
+               <Divider/>
                <h3>Artist</h3>
                <Divider/>
                <p>Blog</p>
