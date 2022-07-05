@@ -47,7 +47,7 @@ def detail(request, id, format=None):
           print(err)
 
 
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'PUT'])
 def edit(request, id, format=None):
      try:
           art_piece = getOneRecord(id)
