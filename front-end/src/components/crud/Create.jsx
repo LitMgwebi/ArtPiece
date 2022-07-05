@@ -1,4 +1,5 @@
-// import axios from "axios";
+import axios from "axios";
+import {useState} from "react"
 import TextField from "@material-ui/core/TextField";
 import Input from "@material-ui/core/Input";
 import Button from "@material-ui/core/Button";
@@ -7,52 +8,52 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 const Create = () => {
      const current = new Date();
-     const currentDate = current.toGMTString();
-
-     // const [title, setTitle] = useState("");
-     // const [blog, setBlog] = useState("");
-     // const [artist, setArtist] = useState("")
-     // const [date, setDate] = useState(currentDate)
-     // const [art, setArt] = useState(null)
+     const date = current.toUTCString();
+     const [title, setTitle] = useState("");
+     const [blog, setBlog] = useState("");
+     const [artist, setArtist] = useState("")
+     const [art, setArt] = useState(null)
      
-     // function handleSubmit(e){
-     //      e.preventDefault();
+     function handleSubmit(e){
+          e.preventDefault();
 
-     //      const userData = {
-     //           title: title,
-     //           blog: blog,
-     //           date: date,
-     //           artist: artist,
-     //           art: art,
-     //      }
+          const userData = {
+               title: title,
+               blog: blog,
+               date: date,
+               artist: artist,
+               art: art,
+          }
 
-     //      axios.post(baseURL, userData).then((response) => {
-     //           console.log(response.status)
-     //           console.log(response.data.token)
-     //      }).catch((error) => {
-     //           if (error.response) {
-     //                console.log(error.response)
-     //                console.log("server responded");
-     //           } else if (error.request){
-     //                console.log("network error");
-     //           } else {
-     //                console.log(error)
-     //           }
-     //      })
-     // }
+          axios.post("http://127.0.0.1:1500/create", userData)
+               .then((response) => {
+                    console.log(response.status)
+                    console.log(response.data.token)
+               }).catch((error) => {
+                    if (error.response) {
+                         console.log(error.response)
+                         console.log("server responded");
+                    } else if (error.request){
+                         console.log("network error");
+                    } else {
+                         console.log(error)
+               }
+          })
+     }
      return (
           <div className="create">
                <h1>Create</h1>
-               <form >
+               <form onSubmit={handleSubmit}>
                     <div id="titleInput">
                          <TextField 
                               id="inputTitle" 
                               label="Title" 
                               variant="standard"
-                              // value={title}
-                              // onChange={(e) => {
-                              //      setTitle(e.target.value)
-                              // }}
+                              type="text"
+                              value={title}
+                              onChange={(e) => {
+                                   setTitle(e.target.value)
+                              }}
                          />
                     </div>
                     <div id="blogInput">
@@ -61,10 +62,10 @@ const Create = () => {
                               label="Blog"
                               placeholder="Enter Blog here"
                               multiline
-                              // value={blog}
-                              // onChange={(e) => {
-                              //      setBlog(e.target.value)
-                              // }}
+                              value={blog}
+                              onChange={(e) => {
+                                   setBlog(e.target.value)
+                              }}
                          />
                     </div>
                     <div id="artistInput">
@@ -75,14 +76,14 @@ const Create = () => {
                               id="inputArtist" 
                               label="Artist" 
                               variant="standard" 
-                              // value={artist}
-                              // onChange={(e) => {
-                              //      setArtist(e.target.value)
-                              // }}
+                              value={artist}
+                              onChange={(e) => {
+                                   setArtist(e.target.value)
+                              }}
                          />
                     </div>
                     <div id="dateInput">
-                         <Input id="Date" readOnly='true' defaultValue={currentDate}/>     
+                         <Input id="Date" readOnly='true' defaultValue={date}/>     
                     </div>
                     <div id="artUpload">
                          <Input 
@@ -90,14 +91,14 @@ const Create = () => {
                               id="contained-button-file" 
                               multiple 
                               type="file"
-                              // value={art}
-                              // onChange={(e) => {
-                              //      setArt(e.target.value)
-                              // }} 
+                              value={art}
+                              onChange={(e) => {
+                                   setArt(e.target.value)
+                              }} 
                          /> 
                     </div>
                     <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                         <button class="btn" type="submit">Submit</button>
+                         <Button type="submit">Submit</Button>
                          <Button href="/list">Cancel</Button>
                     </ButtonGroup>
                </form>
