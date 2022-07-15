@@ -12,7 +12,7 @@ const Create = () => {
      const [title, setTitle] = useState("");
      const [blog, setBlog] = useState("");
      const [artist, setArtist] = useState("")
-     const [art, setArt] = useState(null)
+     const [art, setArt] = useState("")
      
      function handleSubmit(e){
           e.preventDefault();
@@ -24,6 +24,8 @@ const Create = () => {
                artist: artist,
                art: art,
           }
+
+         
 
           axios.post("http://127.0.0.1:1500/create", userData)
                .then((response) => {
@@ -83,7 +85,11 @@ const Create = () => {
                          />
                     </div>
                     <div id="dateInput">
-                         <Input id="Date" readOnly='true' defaultValue={date}/>     
+                         <Input 
+                              id="Date" 
+                              readOnly={true} 
+                              defaultValue={date}
+                         />     
                     </div>
                     <div id="artUpload">
                          <Input 

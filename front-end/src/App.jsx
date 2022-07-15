@@ -17,21 +17,21 @@ function App() {
     <div className="App">
       <Router>
         <div>
-          <navbar>
+          <nav>
             <Link to="/">Home</Link>
             <Link to="/list">List</Link>
             <Link to="/create">Create</Link>
             <Link to="/update">Update</Link>
             <Link to="/detail">Detail</Link>
             <Link to='/delete'>Delete</Link>
-          </navbar>
+          </nav>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/list" element={<List />}/>
             <Route path="/create" element={<Create />}/>
-            <Route path="/update" element={<Update />}/>
-            <Route path="/detail" element={<Detail />}/>
-            <Route path="/delete" element={<Delete />}/>
+            <Route path="/update/:id" element={<Update />}/>
+            <Route path="/detail/:id" element={<Detail />}/>
+            <Route path="/delete/:id" element={<Delete />}/>
           </Routes>
         </div>
       </Router>

@@ -1,3 +1,8 @@
+
+
+
+
+
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -11,7 +16,7 @@ def index(request, format=None):
      try:
           art_pieces = ArtPiece.objects.all()
           art_piece_serializer = ArtPieceSerializer(art_pieces, many=True)
-          return Response(art_piece_serializer.data, safe=False)
+          return Response(art_piece_serializer.data, status=status.HTTP_200_OK)
      except Exception as err:
           print(err)
 
