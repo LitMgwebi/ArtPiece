@@ -48,7 +48,7 @@ def detail(request, id, format=None):
      try:
           art_piece = getOneRecord(id)
           serializer = ArtPieceSerializer(art_piece)
-          return Response(serializer)
+          return Response(serializer.data)
      except Exception as err:
           print(err)
 

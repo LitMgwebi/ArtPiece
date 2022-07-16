@@ -4,6 +4,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const List = () => {
@@ -41,12 +42,15 @@ const List = () => {
                                    </CardContent>
 
                                    <CardActions>
-                                        <Button
-                                             href={`/detail/${entry.id}`}
-                                             variant="contained"
+                                        <Link 
+                                             to={`/detail/${entry.id}`}
+                                             state={{ stateId: entry.id}} // <-- state prop
                                         >
-                                             View
-                                        </Button>
+                                             <Button variant="contained">
+                                                  View
+                                             </Button>
+                                        </Link>
+                                        
                                    </CardActions>
                               </Card>
                          </div>

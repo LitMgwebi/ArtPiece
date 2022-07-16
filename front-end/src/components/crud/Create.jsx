@@ -25,8 +25,6 @@ const Create = () => {
                art: art,
           }
 
-         
-
           axios.post("http://127.0.0.1:1500/create", userData)
                .then((response) => {
                     console.log(response.status)
